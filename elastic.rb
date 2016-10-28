@@ -69,6 +69,11 @@ module Sensu::Extension
             host = k.split('.').first.downcase
             k = k.downcase.gsub(/#{origHost}|#{host}/, 'metrics')
             # Determine if it's a virtual or a physical host
+            # Physical VMWARE hosts must include the cluster_vmcatch_host
+            # Virtual VMWARE hosts must include physicalhost_vmcatch
+            # This ensures that you can template against cluster, physical host, and virtual machine
+            # Ex. HOSTNAME.CLUSTER1_VMCATCH_HOST.METRICNAME VALUE EPOC
+            # Ex. HOSTNAME.PHYSICALHOST_VMCATCH.METRICNAME VALUE EPOC
             if k.include? "_vmcatch"
               splitVersion = k.split('_')
               if splitVersion.length < 3
