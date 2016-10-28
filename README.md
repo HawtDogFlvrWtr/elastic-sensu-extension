@@ -50,3 +50,11 @@ Notice the handler is configured to use elastic instead of default.
 These scripts are used to apply the appropriate template to elasticsearch (Prevents hostnames from being truncated when it reaches a hyphen, etc.), and creates the index called sensu-metrics.
 
 - The only other thing you need to do is restart the sensu services and metrics should start flowing.
+
+## Requirements
+Before this extension will run, you must install two gems (Patron and Elasticsearch) within sensu, with the following commands:
+```
+/opt/sensu/embedded/bin/gem install patron
+/opt/sensu/embedded/bin/gem install elasticsearch
+```
+Notice i've leveraging the embedded ruby instance of gem within sensu. This is requires to ensure that the gem is installed in the sensu gem factory, and not on the base operating system. This will ensure that the gem is available to sensu later. 
