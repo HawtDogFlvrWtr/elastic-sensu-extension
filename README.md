@@ -3,8 +3,7 @@
 
 ## To Install
 
-- Creating the extension config file
-Create a sensu extension config file under /etc/sensu/conf.d/extensions, called elastic.json. The contents of the file will reference your elasticsearch server, and the index you want to use.
+- Create a sensu extension config file under /etc/sensu/conf.d/extensions, called elastic.json. The contents of the file will reference your elasticsearch server, and the index you want to use.
 ```
 {
   "elastic": {
