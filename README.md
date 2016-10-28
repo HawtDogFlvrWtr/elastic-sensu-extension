@@ -57,4 +57,4 @@ Before this extension will run, you must install two gems (Patron and Elasticsea
 /opt/sensu/embedded/bin/gem install patron
 /opt/sensu/embedded/bin/gem install elasticsearch
 ```
-Notice i've leveraging the embedded ruby instance of gem within sensu. This is requires to ensure that the gem is installed in the sensu gem factory, and not on the base operating system. This will ensure that the gem is available to sensu later. 
+Notice I'm leveraging the embedded ruby instance of gem within sensu. This is requires to ensure that the gem is installed in the sensu gem factory, and not on the base operating system. This will ensure that the gem is available to sensu later. 
